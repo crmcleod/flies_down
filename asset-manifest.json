@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/flies_down/static/css/main.3865e5bc.css",
+    "main.js": "/flies_down/static/js/main.a8fc13fc.js",
+    "static/js/787.a5a2885c.chunk.js": "/flies_down/static/js/787.a5a2885c.chunk.js",
+    "static/media/flyHUD.png": "/flies_down/static/media/flyHUD.67c15babe4c458cdd152.png",
+    "static/media/kitchy.png": "/flies_down/static/media/kitchy.c59f941749daf289025e.png",
+    "static/media/cross.jpeg": "/flies_down/static/media/cross.627d9ae8f4713e1c733c.jpeg",
+    "static/media/tombstone.png": "/flies_down/static/media/tombstone.7fd119c33bb25ceec849.png",
+    "index.html": "/flies_down/index.html",
+    "main.3865e5bc.css.map": "/flies_down/static/css/main.3865e5bc.css.map",
+    "main.a8fc13fc.js.map": "/flies_down/static/js/main.a8fc13fc.js.map",
+    "787.a5a2885c.chunk.js.map": "/flies_down/static/js/787.a5a2885c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3865e5bc.css",
+    "static/js/main.a8fc13fc.js"
+  ]
+}
