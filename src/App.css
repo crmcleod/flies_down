@@ -1,7 +1,20 @@
-.App {
+.App *{
   text-align: center;
-}
+  /* cursor: url('cross.jpeg'), auto; */
+  cursor: crosshair;
+  
 
+}
+html {
+  overflow: hidden !important;
+  
+}
+html *{
+  font-family: 'Barrio';
+  cursor: url('./crosshur.png'), auto !important;
+  transition: 0.1s all;
+  user-select: none;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -16,12 +29,16 @@
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  background-image: url('./kitchy.png');
+  background-size: cover;
+  cursor: url('cross.jpeg'), auto;
 }
 
 .App-link {
@@ -35,4 +52,164 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#hud {
+  width: 12vw;
+  height: 8vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
+  margin: 2rem;
+  border: solid 4px rgb(84, 84, 84);
+  outline: 3px solid grey;
+  outline-offset: -0.5rem;
+  justify-content: space-between;
+
+}
+#fly-hud, #death-img {
+  /* position: fixed; */
+  /* top: 0; */
+  /* left: 0; */
+  width: 3vw;
+}
+#death-img {
+  height: 3vw;
+}
+#fly-count, #death-count {
+  /* position: absolute;
+  height: fit-content; */
+  font-size: 1.8rem;
+  margin: auto 0;
+  color: black;
+}
+#gun-wrapper {
+  position: fixed;
+  bottom: -20vh;
+  left: 0;
+}
+#gun {
+  position: relative;
+  transform: rotate(-15deg);
+}
+.animate {
+  animation: shoot 0.4s ease-in-out;
+}
+
+@keyframes shoot {
+  0%, 100% {
+  transform: rotate(-15deg);
+  }
+  25% {
+    transform: rotate(-25deg)
+  }
+}
+
+#flash {
+  display: inline;
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
+  margin-left: -4rem;
+  margin-top: -1.5rem;
+
+}
+.flash-animation {
+  animation: flash 0.1s;
+  
+  /* margin-top: -1rem; */
+  z-index: -1;
+  border-radius: 50%;
+  /* box-shadow: 0px 0px 10px 15px rgba(255, 235, 19, 0.68); */
+}
+@keyframes flash {
+  0%, 100% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+    background-color: rgba(255, 235, 19, 0.68);
+    box-shadow: 0px 0px 10px 15px rgba(255, 235, 19, 0.68);
+  }
+}
+#start-screen, .purple-screen {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(99, 65, 111);
+}
+.purple-screen h1 {
+  margin: auto;
+  line-height: 100vh;
+  font-size: 10rem;
+}
+#start-screen *, #start-screen {
+  cursor: pointer !important;
+}
+#start-screen button, #start-button {
+  position: fixed;
+  top: 66%;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 1.5rem 10rem;
+  border-radius: 10rem;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: 'Barrio';
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.373);
+  background-color: rgb(222, 228, 214);
+}
+#start-button:active {
+  padding: 1.4rem 9.5rem;
+  font-size: 1.9rem;
+  box-shadow: 0px 0px 12px 7px rgba(0, 0, 0, 0.373);
+}
+
+@import url(https://fonts.googleapis.com/css?family=Barrio:regular);
+#start-screen h1 {
+  width: 100%;
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 9rem;
+  font-family: 'Barrio';
+  color: rgb(134, 200, 35);
+
+}
+
+#hud span {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 3vw;
+}
+
+#timer {
+  width: 4rem;
+  height: 4rem;
+  position: fixed; 
+  top: 1%;
+  right: 1%;
+  font-size: 2rem;
+  color: black;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 5rem;
+  margin: 2rem;
+  border: solid 4px rgb(84, 84, 84);
+  outline: 3px solid grey;
+  outline-offset: -0.5rem;
+  line-height: 4rem;
+}
+.smaller-font {
+  font-size: 6vh !important;
 }

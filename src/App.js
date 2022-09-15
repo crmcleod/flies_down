@@ -1,23 +1,50 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect } from 'react';
+import Game from './Game';
+
 
 function App() {
+
+  const [game, startGame] = useState(false)
+  const [deathCount, setDeathCount] = useState(0)
+
+  const handleShoot = () => {
+    document.querySelector('html').style.transition = '0.5s all'
+    const element = document.querySelector('#gun')
+    const flash = document.querySelector('#flash')
+    flash.classList.remove('flash-animation')
+    flash.classList.remove('animate')
+    element.classList.remove('animate')
+    void flash.offsetWidth
+    void element.offsetWidth
+    element.classList.add('animate')
+    flash.classList.add('flash-animation')
+    flash.classList.add('animate')
+  };
+
+  const handleStart = () => {
+    setDeathCount(0)
+    startGame(true);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" onClick={handleShoot}>
+      {
+        game ?
+          <Game 
+            deathCount={deathCount}
+            setDeathCount={setDeathCount}
+            startGame={startGame}
+          /> :
+          <div id='start-screen'>
+            <h1>
+              Flies Down!
+            </h1>
+            <button id='start-button' onClick={handleStart}>
+              Start Game
+            </button>
+          </div>
+      }
     </div>
   );
 }
